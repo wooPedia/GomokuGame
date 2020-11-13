@@ -4,6 +4,11 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#include <d3d9.h>
+#include <d3dx9.h>
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 #include <d3d9.h>
 #include <d3dx9.h>
@@ -18,6 +23,11 @@
 
 #pragma comment(lib, "Gdiplus.lib")
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#pragma comment(lib, "d3d9.lib")
+#pragma comment(lib, "d3dx9.lib")
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 #pragma comment(lib, "d3d9.lib")
 #pragma comment(lib, "d3dx9.lib")
@@ -53,6 +63,7 @@ namespace gomokuGame
 	HWND gExitBtn  = NULL;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	HANDLE ghTimer = NULL;
 
 	static const uint8_t BEGIN_TIME = 60 + 1;
@@ -61,15 +72,20 @@ namespace gomokuGame
 	static RECT timeRT_P2 = { PI_P2_ID_X, PI_P_ID_Y + 50, PI_P_ID_WIDTH + PI_P2_ID_X, PI_P_ID_HEIGHT + 30 + PI_P_ID_Y + 50 };
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 	/* GDI 관련 데이터 */
 	ULONG_PTR gdiplusToken;
 	GdiplusStartupInput gdiplusStartupInput;
 	HDC gHdc;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	HDC gHdc_bStone;
 	HDC gHdc_wStone;
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 
 	/* Direct3D 관련 데이터 */
@@ -79,6 +95,9 @@ namespace gomokuGame
 	LPDIRECT3DTEXTURE9	gTexture   = nullptr;
 	LPDIRECT3DTEXTURE9	gTexture2  = nullptr;
 
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 	/* 텍스쳐 파일 경로 */
@@ -99,7 +118,10 @@ namespace gomokuGame
 	bool bBlackTurn = true;    // 검은돌 차례일 경우 true
 	bool bServer    = false;   // 서버일 경우 true, 클라이언트일 경우 false
 <<<<<<< HEAD
+<<<<<<< HEAD
 	bool bErase     = false;
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
@@ -111,8 +133,11 @@ namespace gomokuGame
 	const wchar_t* gButtonNames[BT_COUNT] = { L"방 만들기", L"랜덤 방 입장", L"게임 종료" }; // 시작 메뉴 버튼 이름
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	static Image* gBlackStoneImgPtr;
 	static Image* gWhiteStoneImgPtr;
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 	static Image* gBoardImgPtr;
@@ -122,7 +147,10 @@ namespace gomokuGame
 	static eMode  gMode = eMode::MD_BEGIN_SCREEN;
 	static ePhase gPhase;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	static bool bIsFirstEnter = true; // 매 턴마다 한 번씩만 실행하도록 합니다. 
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 

@@ -22,6 +22,10 @@ namespace gomokuGame
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
@@ -34,6 +38,10 @@ namespace gomokuGame
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
@@ -62,11 +70,17 @@ namespace gomokuGame
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		// 클라이언트의 요청을 받아 소켓을 생성합니다.
 		sockaddr_in clSockInfo;
 		int clSockInfoSize = sizeof(clSockInfo);
 
 		SOCKET newSocket = accept(listeningSock, reinterpret_cast<sockaddr*>(&clSockInfo), &clSockInfoSize);
+=======
+
+		// 클라이언트의 요청을 받아 소켓을 생성합니다.
+		SOCKET newSocket = accept(listeningSock, NULL, NULL);
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 
 		// 클라이언트의 요청을 받아 소켓을 생성합니다.
@@ -80,7 +94,10 @@ namespace gomokuGame
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		closesocket(listeningSock);

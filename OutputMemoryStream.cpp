@@ -51,6 +51,7 @@ namespace gomokuGame
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	void OutputMemoryStream::WriteInBuffer(uint16_t data)
 	{
 		WriteInBuffer(&data, sizeof(data));
@@ -62,6 +63,8 @@ namespace gomokuGame
 	}
 
 
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
@@ -81,6 +84,7 @@ namespace gomokuGame
 		mCapacity = newSizeInByte;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	// 버퍼의 내용만 비웁니다.
 	void OutputMemoryStream::ClearBuffer()
@@ -88,6 +92,8 @@ namespace gomokuGame
 		memset(mBuffer, 0, mHead);
 		mHead = 0;
 	}
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 }

@@ -18,6 +18,7 @@ namespace gomokuGame
 		void ReadFromBuffer(char* to, size_t sizeInByte, bool isCharPtrType);
 		void ReadFromBuffer(uint8_t* data);
 <<<<<<< HEAD
+<<<<<<< HEAD
 		void ReadFromBuffer(uint16_t* data);
 		void ReadFromBuffer(bool* data);
 
@@ -28,6 +29,11 @@ namespace gomokuGame
 
 		void ClearBuffer();
 
+=======
+
+		char* GetBufferPtr() const;
+
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 
 		char* GetBufferPtr() const;

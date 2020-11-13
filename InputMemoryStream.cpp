@@ -43,6 +43,7 @@ namespace gomokuGame
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	void InputMemoryStream::ReadFromBuffer(uint16_t* data)
 	{
 		ReadFromBuffer(data, sizeof(*data));
@@ -56,10 +57,13 @@ namespace gomokuGame
 
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 	char* InputMemoryStream::GetBufferPtr() const
 	{
 		return mBuffer;
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 	void InputMemoryStream::ClearBuffer()
@@ -67,6 +71,8 @@ namespace gomokuGame
 		memset(mBuffer, 0, mHead);
 		mHead = 0;
 	}
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 }

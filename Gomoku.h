@@ -9,7 +9,10 @@
 
 //#include "Network.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <Windows.h>
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 #include "Variables.h"
@@ -33,9 +36,12 @@ namespace gomokuGame
 	INT	EnterMsgLoop();
 	LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 <<<<<<< HEAD
+<<<<<<< HEAD
 	VOID CALLBACK MyTimeProc(HWND hWnd, UINT msg, UINT_PTR idTimer, DWORD dwTime);
 	VOID OnPaint();
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 
 
@@ -47,6 +53,9 @@ namespace gomokuGame
 	VOID Render();
 	VOID CleanUp();
 
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 
@@ -57,6 +66,7 @@ namespace gomokuGame
 
 	VOID CreateStartMenu(HWND hWnd);
 	VOID DeleteStartMenu();
+<<<<<<< HEAD
 <<<<<<< HEAD
 	VOID CleanUp();
 
@@ -71,10 +81,15 @@ namespace gomokuGame
 	unsigned __stdcall RecvPosFromClient(void* pArg);
 
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 
 	bool IsValidPos(WORD x, WORD y, std::unique_ptr<MyPoint>* pOut);
 	VOID PutStone(const std::unique_ptr<MyPoint> pos);
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 	bool CheckWinCondition(char stone);
 	bool CheckRight(idx_type row, idx_type col, char stone);

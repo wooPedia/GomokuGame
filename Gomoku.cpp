@@ -2,7 +2,10 @@
 #include <process.h>
 #include <windowsx.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <ctime>
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
@@ -11,7 +14,10 @@
 #include "Gomoku.h"
 #include "Structs.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "BitMacro.h"
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
@@ -21,8 +27,13 @@
 #include "SignalManager.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define SAFE_CLEANUP(gdiplusToken) { if(gdiplusToken) { CleanUp(); }}
 #define SET_TIMER(timeLimit)       { gTimeLimit = timeLimit; SetTimer(ghWnd, 1, 1000, MyTimeProc); }
+=======
+#define SAFE_RELEASE(p) { if(p) { p->Release(); p = nullptr; } }
+#define SAFE_CLEANUP(gdiplusToken) { if(gdiplusToken) { CleanUp(); }}
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 #define SAFE_RELEASE(p) { if(p) { p->Release(); p = nullptr; } }
 #define SAFE_CLEANUP(gdiplusToken) { if(gdiplusToken) { CleanUp(); }}
@@ -43,8 +54,11 @@
 #define MSG_DRAW_BUTTON		  0x3003	 /* 버튼 생성          */
 #define MSG_DRAW_TEXT		  0x3004	 /* 텍스트 생성        */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define MSG_DRAW_STONE		  0x3005	 /* 오목알 그리기      */
 
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
@@ -100,9 +114,13 @@ namespace gomokuGame
 	{
 		// hdc 및 임계 영역 변수를 초기화합니다.
 <<<<<<< HEAD
+<<<<<<< HEAD
 		gHdc        = GetDC(hWnd);
 		gHdc_bStone = GetDC(hWnd);
 		gHdc_wStone = GetDC(hWnd);
+=======
+		gHdc = GetDC(hWnd);
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 		gHdc = GetDC(hWnd);
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
@@ -115,6 +133,7 @@ namespace gomokuGame
 		}
 
 		// 이미지 파일을 초기화합니다.
+<<<<<<< HEAD
 <<<<<<< HEAD
 		gBlackStoneImgPtr = Image::FromFile(IMG_BlackStone);
 		gWhiteStoneImgPtr = Image::FromFile(IMG_WhiteStone);
@@ -130,12 +149,17 @@ namespace gomokuGame
 		gStartBtn = NULL;
 		gExitBtn = NULL;
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		gBoardImgPtr   = Image::FromFile(IMG_GameBoard);
 		gPlayer1ImgPtr = Image::FromFile(IMG_Player1);
 		gPlayer2ImgPtr = Image::FromFile(IMG_Player2);
 
 		gReadyMngForSend = std::make_shared<SignalManager>(SignalManager::eSignal::SIG_READY);
 		gReadyMngForRecv = std::make_shared<SignalManager>();
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 	}
 
@@ -162,6 +186,7 @@ namespace gomokuGame
 		gPhase = ePhase::PH_SERVER_1;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		// 만약 Start 버튼이 아직 생성되지 않았다면 기다립니다.
 		while (gStartBtn == NULL)
 		{
@@ -173,12 +198,17 @@ namespace gomokuGame
 		Assert(gStartBtn != NULL, "gStartBtn must not be NULL.");
 		Button_Enable(gStartBtn, false);
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		// 만약 Ready 버튼이 아직 생성되지 않았다면 기다립니다.
 		while (gReadyBtn == NULL);
 
 		// Ready 버튼을 비활성화합니다.
 		Assert(gReadyBtn != NULL, "gReadyBtn must not be NULL.");
 		Button_Enable(gReadyBtn, false);
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 		/*
@@ -213,6 +243,10 @@ namespace gomokuGame
 
 		gPhase = ePhase::PH_SERVER_2;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+		Button_Enable(gReadyBtn, true);
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 		Button_Enable(gReadyBtn, true);
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
@@ -220,6 +254,7 @@ namespace gomokuGame
 		// 게임 시작 전까지 상대의 Ready 상태를 확인합니다. 
 		while (gMode == eMode::MD_BEFORE_START)
 		{
+<<<<<<< HEAD
 <<<<<<< HEAD
 			gReadyMngForRecv->RecvSignal(gSocket);
 			if (gReadyMngForRecv->GetSignal() == SignalManager::eSignal::SIG_READY)
@@ -256,6 +291,8 @@ namespace gomokuGame
 		gMode = eMode::MD_ING;
 		SET_TIMER(BEGIN_TIME);
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 			//EnterCriticalSection(&cs);
 
 			gReadyMngForRecv->RecvSignal(gSocket);
@@ -269,6 +306,9 @@ namespace gomokuGame
 
 			//LeaveCriticalSection(&cs);
 		}
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 		return 0;
@@ -308,6 +348,7 @@ namespace gomokuGame
 			PostMessage(ghWnd, MSG_DRAW_TEXT, NULL, NULL);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			// 상대 방이 시작 신호를 보낼 때까지 기다립니다.
 			while (gMode == eMode::MD_BEFORE_START)
 			{
@@ -341,6 +382,8 @@ namespace gomokuGame
 		{
 			MessageBoxW(ghWnd, L"생성된 방이 없습니다.", L"Error", MB_OK);
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 			// 게임 시작 전까지 상대의 Ready 상태를 확인합니다. 
 			while (gMode == eMode::MD_BEFORE_START)
 			{
@@ -361,6 +404,9 @@ namespace gomokuGame
 		else
 		{
 			MessageBoxW(NULL, L"생성된 방이 없습니다.", L"Error", MB_OK);
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		}
 
@@ -386,6 +432,10 @@ namespace gomokuGame
 				TranslateMessage(&msg);
 				DispatchMessage(&msg);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+				//MessageBoxA(NULL, std::to_string(GetCurrentThreadId()).c_str(), NULL, MB_OK);
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 				//MessageBoxA(NULL, std::to_string(GetCurrentThreadId()).c_str(), NULL, MB_OK);
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
@@ -395,6 +445,7 @@ namespace gomokuGame
 				// 현재 스레드 메세지 큐에 메세지가 없을 경우 해당 작업을 합니다.
 				// 즉 모든 윈도우 메세지를 처리 후 해당 작업을 합니다.
 				// 해당 작업이 모두 끝나면 그동안 쌓여있던 메세지를 처리합니다.
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 				if ( (gMode == eMode::MD_ING) && (bIsFirstEnter) )
@@ -447,12 +498,17 @@ namespace gomokuGame
 						}
 					}
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 				//Render();
 
 				if ( bReadyP1 && bReadyP2 && (gMode == eMode::MD_BEFORE_START) )
 				{
 					MessageBox(ghWnd, L"게임 시작!", NULL, MB_OK);
 					gMode = eMode::MD_ING;
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 				}
 			}
@@ -474,11 +530,17 @@ namespace gomokuGame
 		{
 			case WM_CREATE:
 <<<<<<< HEAD
+<<<<<<< HEAD
 			{
 				CreateStartMenu(hWnd);
 				InitGlobalVariables(hWnd);
 				return 0;
 			}
+=======
+				CreateStartMenu(hWnd);
+				InitGlobalVariables(hWnd);
+				return 0;
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 				CreateStartMenu(hWnd);
 				InitGlobalVariables(hWnd);
@@ -525,6 +587,7 @@ namespace gomokuGame
 
 						EnterCriticalSection(&cs);
 <<<<<<< HEAD
+<<<<<<< HEAD
 						if (!bServer)
 						{
 							bReadyP2 = !bReadyP2;
@@ -537,6 +600,8 @@ namespace gomokuGame
 						PostMessage(ghWnd, MSG_DRAW_TEXT, NULL, NULL);
 
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 						if (bServer)
 						{
@@ -549,12 +614,16 @@ namespace gomokuGame
 						gReadyMngForSend->SendSignal(gSocket);
 
 						LeaveCriticalSection(&cs);
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 						return 0;
 					}
 
 					case BT_START: // 게임 시작 버튼
 					{
+<<<<<<< HEAD
 <<<<<<< HEAD
 						Assert(gSocket != NULL, "gSocket must not be NULL.");
 						if (bServer)
@@ -566,11 +635,14 @@ namespace gomokuGame
 
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 						return 0;
 					}
 				}
 				return 0;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 			// 마우스 클릭 처리
 			case WM_LBUTTONUP:
@@ -635,6 +707,8 @@ namespace gomokuGame
 							//UpdateWindow(ghWnd);
 						}
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 			case WM_LBUTTONUP:
 				if (gMode == eMode::MD_ING)
 				{
@@ -642,6 +716,9 @@ namespace gomokuGame
 					if (IsValidPos(GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam), &pos))
 					{
 						PutStone(std::move(pos));
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 					}
 				}
@@ -659,8 +736,11 @@ namespace gomokuGame
 			case WM_PAINT:
 			{
 <<<<<<< HEAD
+<<<<<<< HEAD
 				OnPaint();
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 				PAINTSTRUCT ps;
 				HDC hdc = BeginPaint(hWnd, &ps);
 				if (gMode >= eMode::MD_BEFORE_START)
@@ -708,6 +788,9 @@ namespace gomokuGame
 					}
 				}
 				EndPaint(hWnd, &ps);
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 				return 0;
 			}
@@ -734,7 +817,11 @@ namespace gomokuGame
 				return 0;
 			}
 <<<<<<< HEAD
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
@@ -764,6 +851,7 @@ namespace gomokuGame
 			{
 				while (!textInfoQueue.empty())
 				{
+<<<<<<< HEAD
 <<<<<<< HEAD
 					static const auto COL_DEFAULT = RGB(0, 0, 0);
 					static const auto COL_RED     = RGB(255, 0, 0);
@@ -938,6 +1026,8 @@ namespace gomokuGame
 
 		EndPaint(ghWnd, &ps);
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 					auto textInfo = textInfoQueue.front(); // shared_ptr
 					textInfoQueue.pop();
 					DrawMyText(gHdc, textInfo->X, textInfo->Y, textInfo->Width, textInfo->Height, textInfo->Text);
@@ -1060,11 +1150,15 @@ namespace gomokuGame
 		);
 
 		return S_OK;
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 	}
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	/*----------------------------------------------------------------------------------
 		Name: MyTimeProc()
@@ -1119,6 +1213,8 @@ namespace gomokuGame
 
 		return;
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 	/*----------------------------------------------------------------------------------
 		Name: Render()
@@ -1149,12 +1245,19 @@ namespace gomokuGame
 
 		// 전면버퍼와 후면버퍼를 교체합니다.
 		gD3D_Device->Present(NULL, NULL, NULL, NULL);
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 	}
 
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
@@ -1165,16 +1268,22 @@ namespace gomokuGame
 	VOID CleanUp()
 	{
 <<<<<<< HEAD
+<<<<<<< HEAD
 		KillTimer(ghWnd, 1);
 		GdiplusShutdown(gdiplusToken);
 		ReleaseDC(ghWnd, gHdc);
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		GdiplusShutdown(gdiplusToken);
 		ReleaseDC(ghWnd, gHdc);
 		SAFE_RELEASE(gTexture);
 		SAFE_RELEASE(gD3D_Sprite);
 		SAFE_RELEASE(gD3D_Device);
 		SAFE_RELEASE(gD3D);
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 	}
 
@@ -1255,7 +1364,11 @@ namespace gomokuGame
 		{
 			ppInfoQueue.emplace(std::make_shared<InGamePPInfo>(PP1_X, PP_Y, PP_WIDTH, PP_HEIGHT));
 <<<<<<< HEAD
+<<<<<<< HEAD
 			btnInfoQueue.emplace(std::make_shared<InGameButtonInfo>(IGB_P1_READY_X, IGB_READY_Y, IGB_READY_WIDTH, IGB_READY_HEIGHT, (HMENU)(BT_START), L"Game Start")); // player1 시작 버튼
+=======
+			btnInfoQueue.emplace(std::make_shared<InGameButtonInfo>(IGB_P1_READY_X, IGB_READY_Y, IGB_READY_WIDTH, IGB_READY_HEIGHT, (HMENU)(BT_READY), L"Ready")); // player1 준비 버튼
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 			btnInfoQueue.emplace(std::make_shared<InGameButtonInfo>(IGB_P1_READY_X, IGB_READY_Y, IGB_READY_WIDTH, IGB_READY_HEIGHT, (HMENU)(BT_READY), L"Ready")); // player1 준비 버튼
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
@@ -1273,7 +1386,11 @@ namespace gomokuGame
 		btnInfoQueue.emplace(std::make_shared<InGameButtonInfo>(IGB_EXIT_X, IGB_EXIT_Y, IGB_EXIT_WIDTH, IGB_EXIT_HEIGHT, (HMENU)(BT_EXIT), L"Exit")); // Exit 버튼
 		imageInfoQueue.emplace(std::make_shared<ImageInfo>((float)BD_BEGIN_X, (float)BD_BEGIN_Y, (float)BD_WIDTH, (float)BD_HEIGHT, gBoardImgPtr)); // 오목판
 <<<<<<< HEAD
+<<<<<<< HEAD
 		imageInfoQueue.emplace(std::make_shared<ImageInfo>((float)PI_PLAYER1_X, (float)PI_PLAYER_Y, (float)PI_PLAYER_WIDTH, (float)PI_PLAYER_HEIGHT, gPlayer1ImgPtr)); // 캐릭터1
+=======
+		imageInfoQueue.emplace(std::make_shared<ImageInfo>((float)PI_PLAYER1_X, (float)PI_PLAYER_Y, (float)PI_PLAYER_WIDTH, (float)PI_PLAYER_HEIGHT, gPlayer1ImgPtr));       // 캐릭터1
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 		imageInfoQueue.emplace(std::make_shared<ImageInfo>((float)PI_PLAYER1_X, (float)PI_PLAYER_Y, (float)PI_PLAYER_WIDTH, (float)PI_PLAYER_HEIGHT, gPlayer1ImgPtr));       // 캐릭터1
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
@@ -1319,7 +1436,11 @@ namespace gomokuGame
 		Desc: (x, y)가 유효한 좌표인지 확인 후 해당 좌표와 근접한 교차점의 좌표를 반환합니다.
 	----------------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 	bool IsValidPos(WORD x, WORD y, std::shared_ptr<MyPoint>* pOut)
+=======
+	bool IsValidPos(WORD x, WORD y, std::unique_ptr<MyPoint>* pOut)
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 	bool IsValidPos(WORD x, WORD y, std::unique_ptr<MyPoint>* pOut)
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
@@ -1362,6 +1483,7 @@ namespace gomokuGame
 		Desc: pos가 가리키는 위치에 바둑돌을 놓습니다.
 	----------------------------------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 	bool PutStone(const std::shared_ptr<MyPoint> pos)
 	{
 		// 바둑돌 이미지를 생성합니다.
@@ -1371,6 +1493,8 @@ namespace gomokuGame
 		// pos가 가리키는 좌표가 돌의 중앙이 되도록 합니다.
 		// 바둑돌의 데이터가 실제로 저장될 배열의 인덱스를 가져옵니다.
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 	VOID PutStone(const std::unique_ptr<MyPoint> pos)
 	{
 		// 바둑돌 이미지를 생성합니다.
@@ -1381,6 +1505,9 @@ namespace gomokuGame
 		const char BLACK_STONE = 'b';
 		const char WHITE_STONE = 'w';
 		
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		coordinate_type x      = TO_CENTER(pos->X.first);
 		coordinate_type y      = TO_CENTER(pos->Y.first);
@@ -1390,6 +1517,7 @@ namespace gomokuGame
 		// 이미 돌이 놓인 곳이면 무효화합니다.
 		if (board[row][column] != NULL)
 		{
+<<<<<<< HEAD
 <<<<<<< HEAD
 			return false;
 		}
@@ -1416,6 +1544,8 @@ namespace gomokuGame
 		bBlackTurn = !bBlackTurn;
 		return true;
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 			return;
 		}
 		
@@ -1454,6 +1584,9 @@ namespace gomokuGame
 		}
 
 		bBlackTurn = !bBlackTurn;
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 	}
 
@@ -1612,8 +1745,11 @@ namespace gomokuGame
 		auto eBtnID = static_cast<eButtonID>(btnID);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		Assert(btn_hWnd != NULL, "Failed to CreateWindow() in DrawButton()");
 
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		switch (eBtnID)
@@ -1626,10 +1762,13 @@ namespace gomokuGame
 			gStartBtn = btn_hWnd;
 			return 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		case BT_EXIT:
 			gExitBtn = btn_hWnd;
 			return 0;
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		}
@@ -1646,6 +1785,10 @@ namespace gomokuGame
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
@@ -1659,6 +1802,10 @@ namespace gomokuGame
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
@@ -1679,6 +1826,7 @@ namespace gomokuGame
 		}
 	}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 	// 게임 결과를 직렬화 후 상대에게 전송합니다.
@@ -1903,6 +2051,8 @@ namespace gomokuGame
 
 		return static_cast<unsigned>(recvBytes);
 	}
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 }

@@ -1,8 +1,14 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "Assert.h"
 #include "SignalManager.h"
 
 extern CRITICAL_SECTION cs;
+=======
+#include "SignalManager.h"
+
+#include "Assert.h"
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 #include "SignalManager.h"
 
@@ -26,13 +32,17 @@ namespace gomokuGame
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// 논블로킹 (메인 스레드가 호출하기 때문에)
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 	void SignalManager::SendSignal(SOCKET sock)
 	{
 		Assert(mSignal != (eSignal)NULL, "mSignal must be set before calling SendSignal().");
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		//EnterCriticalSection(&cs);
 		//SetNonBlockingMode(sock);
@@ -50,6 +60,8 @@ namespace gomokuGame
 
 		// 상대방으로부터 받은 시그널을 저장합니다.
 =======
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		SetNonBlockingMode(sock);
 		send(sock, mBuffer, eSignalSize::SIG_SIZE, 0);
 		SetBlockingMode(sock);
@@ -74,6 +86,9 @@ namespace gomokuGame
 
 		// 상대방으로부터 받은 시그널을 저장합니다.
 		SetBlockingMode(sock);
+<<<<<<< HEAD
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
+=======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		sig_type intSignal = 0;
 		memcpy(&intSignal, mBuffer, eSignalSize::SIG_SIZE);

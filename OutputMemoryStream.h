@@ -20,8 +20,11 @@ namespace gomokuGame
 		void WriteInBuffer(const void* pArg, size_t sizeInByte);
 		void WriteInBuffer(uint8_t data);
 <<<<<<< HEAD
+<<<<<<< HEAD
 		void WriteInBuffer(uint16_t data);
 		void WriteInBuffer(bool data);
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
@@ -29,9 +32,12 @@ namespace gomokuGame
 		// i.e. void WriteInBuffer(uint32_t num);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		void ClearBuffer();
 
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 =======
 >>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 	private:
