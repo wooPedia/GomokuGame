@@ -125,8 +125,12 @@ namespace gomokuGame
 	{
 		PH_SERVER_1 = 0,      /* 방 생성 상태   */
 		PH_SERVER_2,	      /* 상대 입장 상태 */
+<<<<<<< HEAD
 		PH_CLIENT_1,		  /* 클라 입장 상태 */
 		PH_ING,				  /* 게임 중 상태 */
+=======
+		PH_CLIENT_1		      /* 클라 입장 상태 */
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 	};
 
 	

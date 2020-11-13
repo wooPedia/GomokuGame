@@ -3,6 +3,11 @@
 #endif // !UNICODE
 
 
+<<<<<<< HEAD
+=======
+#include <d3d9.h>
+#include <d3dx9.h>
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 #include <gdiplus.h>
 
 #include <vector>
@@ -12,6 +17,11 @@
 #include "EnumInfo.h"
 
 #pragma comment(lib, "Gdiplus.lib")
+<<<<<<< HEAD
+=======
+#pragma comment(lib, "d3d9.lib")
+#pragma comment(lib, "d3dx9.lib")
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 using namespace Gdiplus;
 
@@ -42,19 +52,34 @@ namespace gomokuGame
 	HWND gStartBtn = NULL;
 	HWND gExitBtn  = NULL;
 
+<<<<<<< HEAD
 	HANDLE ghTimer = NULL;
 
 	static const uint8_t BEGIN_TIME = 60 + 1;
 	static uint8_t gTimeLimit = BEGIN_TIME;
 	static RECT timeRT_P1 = { PI_P1_ID_X, PI_P_ID_Y + 50, PI_P_ID_WIDTH + PI_P1_ID_X, PI_P_ID_HEIGHT + 30 + PI_P_ID_Y + 50 };
 	static RECT timeRT_P2 = { PI_P2_ID_X, PI_P_ID_Y + 50, PI_P_ID_WIDTH + PI_P2_ID_X, PI_P_ID_HEIGHT + 30 + PI_P_ID_Y + 50 };
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 	/* GDI 관련 데이터 */
 	ULONG_PTR gdiplusToken;
 	GdiplusStartupInput gdiplusStartupInput;
 	HDC gHdc;
+<<<<<<< HEAD
 	HDC gHdc_bStone;
 	HDC gHdc_wStone;
+=======
+
+
+	/* Direct3D 관련 데이터 */
+	LPDIRECT3D9         gD3D        = nullptr;
+	LPDIRECT3DDEVICE9   gD3D_Device = nullptr;
+	LPD3DXSPRITE        gD3D_Sprite = nullptr;
+	LPDIRECT3DTEXTURE9	gTexture   = nullptr;
+	LPDIRECT3DTEXTURE9	gTexture2  = nullptr;
+
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 	/* 텍스쳐 파일 경로 */
 	const wchar_t* IMG_GameBoard  = L"./Image/background.png";
@@ -73,7 +98,10 @@ namespace gomokuGame
 	bool bReadyP2   = false;   // Player2 Ready 여부
 	bool bBlackTurn = true;    // 검은돌 차례일 경우 true
 	bool bServer    = false;   // 서버일 경우 true, 클라이언트일 경우 false
+<<<<<<< HEAD
 	bool bErase     = false;
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 	std::queue<std::shared_ptr<InGameButtonInfo>> btnInfoQueue;
 	std::queue<std::shared_ptr<InGamePPInfo>>     ppInfoQueue;
@@ -82,15 +110,21 @@ namespace gomokuGame
 
 	const wchar_t* gButtonNames[BT_COUNT] = { L"방 만들기", L"랜덤 방 입장", L"게임 종료" }; // 시작 메뉴 버튼 이름
 	
+<<<<<<< HEAD
 	static Image* gBlackStoneImgPtr;
 	static Image* gWhiteStoneImgPtr;
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 	static Image* gBoardImgPtr;
 	static Image* gPlayer1ImgPtr;
 	static Image* gPlayer2ImgPtr;
 
 	static eMode  gMode = eMode::MD_BEGIN_SCREEN;
 	static ePhase gPhase;
+<<<<<<< HEAD
 	static bool bIsFirstEnter = true; // 매 턴마다 한 번씩만 실행하도록 합니다. 
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 	static size_t gBlackStoneCount = 0;
 	static size_t gWhiteStoneCount = 0;

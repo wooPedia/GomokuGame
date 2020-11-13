@@ -12,10 +12,17 @@ namespace gomokuGame
 		enum class eSignal
 		{
 			// If you need more signal
+<<<<<<< HEAD
 			// add it in range 100~999
 			SIG_NULL = 100,   /* Similar to NULL in here */
 			SIG_READY,	      /* Ready Signal			 */
 			SIG_START	      /* Game start Signal		 */
+=======
+			// add in range 100~999
+			// SIG_NULL is same with NULL in here.
+			SIG_NULL = 100,
+			SIG_READY,
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		};
 
 		SignalManager();

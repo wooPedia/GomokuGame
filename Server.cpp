@@ -21,6 +21,10 @@ namespace gomokuGame
 			return INVALID_SOCKET;
 		}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		// 소켓 생성
 		SOCKET listeningSock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 		if (listeningSock == INVALID_SOCKET)
@@ -29,6 +33,10 @@ namespace gomokuGame
 			return INVALID_SOCKET;
 		}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		// 소켓에 ip 주소와 port 번호 바인딩
 		sockaddr_in hint;
 		hint.sin_family = AF_INET;
@@ -53,11 +61,17 @@ namespace gomokuGame
 			return INVALID_SOCKET;
 		}
 
+<<<<<<< HEAD
 		// 클라이언트의 요청을 받아 소켓을 생성합니다.
 		sockaddr_in clSockInfo;
 		int clSockInfoSize = sizeof(clSockInfo);
 
 		SOCKET newSocket = accept(listeningSock, reinterpret_cast<sockaddr*>(&clSockInfo), &clSockInfoSize);
+=======
+
+		// 클라이언트의 요청을 받아 소켓을 생성합니다.
+		SOCKET newSocket = accept(listeningSock, NULL, NULL);
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		if (newSocket == INVALID_SOCKET) // 소켓 생성에 성공하면 해당 소켓을 담당할 스레드를 생성합니다. 
 		{
 			closesocket(listeningSock);
@@ -65,7 +79,10 @@ namespace gomokuGame
 			return INVALID_SOCKET;
 		}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 		closesocket(listeningSock);
 
 		return newSocket;

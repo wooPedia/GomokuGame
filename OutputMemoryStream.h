@@ -19,15 +19,21 @@ namespace gomokuGame
 
 		void WriteInBuffer(const void* pArg, size_t sizeInByte);
 		void WriteInBuffer(uint8_t data);
+<<<<<<< HEAD
 		void WriteInBuffer(uint16_t data);
 		void WriteInBuffer(bool data);
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 
 		// 직렬화할 데이터 타입이 더 있을 경우 오버로딩을 추가합니다.
 		// i.e. void WriteInBuffer(uint32_t num);
 
+<<<<<<< HEAD
 
 		void ClearBuffer();
 
+=======
+>>>>>>> 983b2590c9a49ad9c1561202d61873c1c10c6c7e
 	private:
 		void reallocBuffer(const size_t newSizeInByte);
 
